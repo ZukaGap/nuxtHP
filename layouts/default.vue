@@ -16,6 +16,16 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: FontasticBeast;
+  src: url("~static/FontasticBeast-O7do.otf");
+}
+
+body,
+html {
+  background-color: #1b3416;
+}
+
 html {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
@@ -26,7 +36,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background-color: #f7f6f5;
 }
 
 a {
