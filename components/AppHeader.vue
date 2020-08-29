@@ -22,11 +22,16 @@
 
 <script>
 export default {
-  name: "AppHeader"
+  name: "AppHeader",
 };
 </script>
 
 <style scoped>
+@font-face {
+  font-family: WizardWorldSimplified;
+  src: url("~static/WizardWorldSimplified-Kxr7.ttf");
+}
+
 .header {
   width: 100%;
   height: 70px;
@@ -42,6 +47,12 @@ h1 {
   padding: 0 20px;
   font-size: 26px;
   font-weight: 900;
+  font-family: WizardWorldSimplified;
+}
+
+h1:hover {
+  color: #fd7e14;
+  transition: ease-in-out 450ms;
 }
 
 h1::selection {
@@ -55,15 +66,21 @@ ul {
   align-items: center;
 }
 
+ul li {
+  list-style-type: none;
+}
+
 ul li a {
   margin: 0 20px;
   font-size: 26px;
   color: #f8f9fa;
+  font-family: WizardWorldSimplified;
 }
 
 ul li a:hover {
   color: #fd7e14;
   border-bottom: 5px solid #fd7e14;
+  transition: all ease-in-out 450ms;
 }
 
 ul li:last-child {
