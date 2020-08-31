@@ -23,7 +23,11 @@ export default {
 
 body,
 html {
-  background-color: #1b3416;
+  background-color: var(--background);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 html {

@@ -1,20 +1,41 @@
 <template>
-  <div>
-    <nuxt-link to="/characters" class="back">Back To Jokes</nuxt-link>
-    <h2>{{ character }}</h2>
-    <hr />
-    <small>Joke ID: {{ $route.params.id }}</small>
+  <div class="character">
+    <nuxt-link to="/characters" class="back">Back To Characters</nuxt-link>
+    <table>
+      <tr v-for="key in Object.keys(strippedCharacter)" :key="key">
+        <th>{{ beautifyObjectKey(key) }}:</th>
+        <td>{{ character[key] }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 
+const exclude = ["_id", "__v"];
+
 export default {
   data() {
     return {
       character: {},
     };
+  },
+  computed: {
+    strippedCharacter() {
+      const stripped = { ...this.character };
+      for (let ex of exclude) {
+        delete stripped[ex];
+      }
+      return stripped;
+    },
+  },
+  methods: {
+    beautifyObjectKey(key) {
+      const words = key.split(/(?=[A-Z])/);
+      words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1);
+      return words.join(" ");
+    },
   },
   async created() {
     const config = {
@@ -56,4 +77,40 @@ export default {
 </script>
 
 <style scoped>
+.character {
+  width: 100%;
+  height: 100%;
+  margin: 2rem 0;
+}
+
+.back {
+  color: var(--light);
+  font-family: WizardWorldSimplified;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.back:hover {
+  color: var(--blue);
+}
+
+table {
+  font-family: WizardWorldSimplified;
+  font-size: 20px;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+th {
+  font-size: 24px;
+}
+
+td:hover,
+th:hover {
+  color: var(--orange);
+}
 </style>

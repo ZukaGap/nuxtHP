@@ -11,7 +11,7 @@
 
 <script>
 import axios from "axios";
-import Character from "../../components/character";
+import Character from "../../components/Character";
 
 export default {
   components: {
@@ -22,7 +22,13 @@ export default {
       characters: [],
     };
   },
-  async created() {
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 400);
+    });
+  },
+  async asyncData({ params }) {
     const config = {
       headers: {
         Accept: "application/json",
@@ -35,7 +41,7 @@ export default {
         `https://www.potterapi.com/v1/characters?key=${key}`,
         config
       );
-      this.characters = res.data;
+      return { characters: res.data };
       //   console.log(res.data);
     } catch (error) {
       console.error(error);

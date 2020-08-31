@@ -34,6 +34,21 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
+
+  /*
+   ** modifying the default loader
+   */
+  loading: {
+    color: "#1b3416",
+    height: "5px",
+    continuous: true,
+    duration: 400
+  },
+
+  /*
+   ** importing a custom loader. this will overwrite the default loader above
+   */
+  // loading: "~/components/LoadingBar.vue",
   plugins: [],
   /*
    ** Auto import components

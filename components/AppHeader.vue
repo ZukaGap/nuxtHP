@@ -43,7 +43,7 @@ export default {
 }
 
 h1 {
-  color: #f8f9fa;
+  color: var(--light);
   padding: 0 20px;
   font-size: 26px;
   font-weight: 900;
@@ -51,12 +51,12 @@ h1 {
 }
 
 h1:hover {
-  color: #fd7e14;
+  color: var(--orange);
   transition: ease-in-out 450ms;
 }
 
 h1::selection {
-  color: #f8f9fa;
+  color: var(--light);
 }
 
 ul {
@@ -73,13 +73,13 @@ ul li {
 ul li a {
   margin: 0 20px;
   font-size: 26px;
-  color: #f8f9fa;
+  color: var(--light);
   font-family: WizardWorldSimplified;
 }
 
 ul li a:hover {
-  color: #fd7e14;
-  border-bottom: 5px solid #fd7e14;
+  color: var(--orange);
+  border-bottom: 5px solid var(--orange);
   transition: all ease-in-out 450ms;
 }
 
