@@ -2,9 +2,9 @@
   <div>
     <table class="rwd-table">
       <tr>
-        <th>spell</th>
-        <th>type</th>
-        <th>effect</th>
+        <th>Spell</th>
+        <th>Type</th>
+        <th>Effect</th>
       </tr>
       <Spell
         v-for="spell in spells"
@@ -74,21 +74,8 @@ export default {
   margin: 1em auto;
   min-width: 300px;
 }
-.rwd-table tr {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
-.rwd-table th {
-  display: none;
-}
-.rwd-table td {
-  display: block;
-}
-.rwd-table td:first-child {
-  padding-top: 0.5em;
-}
-.rwd-table td:last-child {
-  padding-bottom: 0.5em;
+.rwd-table tr:hover {
+  color: var(--red);
 }
 .rwd-table td:before {
   content: attr(data-th) ": ";
@@ -121,13 +108,13 @@ export default {
   }
 }
 .rwd-table {
-  background: #34495e;
-  color: #fff;
+  background: var(--dark);
+  color: var(--light);
   border-radius: 0.4em;
   overflow: hidden;
 }
 .rwd-table tr {
-  border-color: #46637f;
+  border-color: var(--dark);
 }
 .rwd-table th,
 .rwd-table td {
@@ -141,6 +128,6 @@ export default {
 }
 .rwd-table th,
 .rwd-table td:before {
-  color: #dd5;
+  color: var(--yellow);
 }
 </style>
