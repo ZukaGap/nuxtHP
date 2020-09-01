@@ -24,7 +24,7 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/hp.ico" }]
   },
   /*
    ** Global CSS
@@ -40,7 +40,7 @@ export default {
    */
   loading: {
     color: "#1b3416",
-    height: "5px",
+    height: "10px",
     continuous: true,
     duration: 400
   },
